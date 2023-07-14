@@ -15,6 +15,7 @@
     "expo": "~48.0.18",
     "expo-linking": "^5.0.2",
     "expo-status-bar": "~1.4.4",
+    "expo-svg-uri": "^1.3.1",
     "moti": "^0.25.3",
     "native-base": "^3.4.28",
     "react": "18.2.0",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/react": "~18.0.14",
+    "@types/react-native": "^0.72.2",
     "prettier": "^3.0.0",
     "typescript": "^4.9.4"
   },
