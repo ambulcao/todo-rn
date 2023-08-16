@@ -1,17 +1,14 @@
 import React, { useCallback, useState } from 'react'
-import { Pressable } from 'react-native'
 import {
   Icon,
-  Text,
-  Box,
   Center, 
   VStack,
   Fab,
   useColorModeValue
 } from 'native-base'
 import { AntDesign } from '@expo/vector-icons'
+import AnimatedColorBox from '../components/animated-color-box'
 import ThemeToggle from '../components/theme-toggle'
-import TaskItem from '../components/task-item'
 import TaskList from '../components/task-list'
 import shortid from 'shortid'
 
@@ -31,7 +28,7 @@ const initialData = [
 export default function MainScreen() {
   const [data, setData] = useState(initialData)
   const [editingItemId, setEditingItemId] = useState<string | null>(null)
-  const handleToggleTaskItem = useCallback(item => {
+  const handleToggleTaskItem = useCallback((item:any) => {
       setData(prevData => {
         const newData = [...prevData]
         const index=prevData.indexOf(item)
@@ -43,7 +40,7 @@ export default function MainScreen() {
       })
   }, [])
 
-  const handleChangeTaskItemSubject = useCallback((item, newSubject) => {
+  const handleChangeTaskItemSubject = useCallback((item:any, newSubject:any) => {
     setData(prevData => {
       const newData = [...prevData]
       const index = prevData.indexOf(item)
@@ -55,13 +52,13 @@ export default function MainScreen() {
     })
   }, [])
 
-  const handleFinishEditingTaskItem = useCallback(_item => {
+  const handleFinishEditingTaskItem = useCallback((_item:any) => {
     setEditingItemId(null)
   },[])
-  const handlePressTaskItemLabel = useCallback(item => {
+  const handlePressTaskItemLabel = useCallback((item:any) => {
     setEditingItemId(item.id)
   },[])
-  const handleRemoveItem = useCallback(item => {
+  const handleRemoveItem = useCallback((item:any) => {
     setData(prevData => {
       const newData = prevData.filter(i => i !== item)
       return newData
@@ -69,7 +66,11 @@ export default function MainScreen() {
   }, [])
 
   return(
-    <Center _dark={{bg: 'blueGray.900'}} _light={{bg: 'blueGray.50'}} flex={1}>
+    <AnimatedColorBox 
+        flex={1}
+        bg={useColorModeValue('warmGray.50', 'primary.900')}
+        w="full"
+    >
       <VStack space={5} alignItems="center" w="full">
         <TaskList
           data={data}
@@ -106,6 +107,6 @@ export default function MainScreen() {
           setEditingItemId(id)
         }}
         />
-    </Center>
+    </AnimatedColorBox>
   )
 }
