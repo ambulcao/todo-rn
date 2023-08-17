@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import {
-  Icon,
-  Center, 
+  Icon, 
   VStack,
   Fab,
   useColorModeValue
@@ -11,6 +10,7 @@ import AnimatedColorBox from '../components/animated-color-box'
 import ThemeToggle from '../components/theme-toggle'
 import TaskList from '../components/task-list'
 import shortid from 'shortid'
+import Masthead from '../components/masthead'
 
 const initialData = [
   {
