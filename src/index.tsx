@@ -7,7 +7,9 @@ const Drawer = createDrawerNavigator()
 
 const App = () => {
   return (
-    <Drawer.Navigator initialRouteName="Main" screenOptions={{
+    <Drawer.Navigator 
+      initialRouteName="Main" 
+      screenOptions={{
       headerShown: false, 
       drawerType: 'back',
       overlayColor: '#00000000'
