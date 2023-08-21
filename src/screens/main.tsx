@@ -96,9 +96,6 @@ export default function MainScreen() {
           onRemoveItem={handleRemoveItem}
           editingItemId={editingItemId}
         />
-           
-        
-        <ThemeToggle/>
       </VStack>
       <Fab 
         position="absolute" 
